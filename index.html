@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
+      integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css"
+      integrity="sha512-rxThY3LYIfYsVCWPCW9dB0k+e3RZB39f23ylUYTEuZMDrN/vRqLdaCBo/FbvVT6uC2r0ObfPzotsfKF9Qc5W5g=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css"
+      integrity="sha512-TQQ3J4WkE/rwojNFo6OJdyu6G8Xe9z8rMrlF9y7xpFbQfW5g8aSWcygCQ4vqRiJqFsDsE1T6MoAOMJkFXlrI9A=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.standalone.min.css"
+      integrity="sha512-p4vIrJ1mDmOVghNMM4YsWxm0ELMJ/T0IkdEvrkNHIcgFsSzDi/fV7YxzTzb3mnMvFPawuIyIrHcpxClauEfpQg=="
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        color: #000000;
+        font-family: "Comfortaa", cursive;
+        background-image: url("https://images.unsplash.com/photo-1599785209615-a35f883d93c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2346&q=80");
+        background-repeat: no-repeat;
+      }
+      .page-title {
+        text-align: center;
+        margin-top: 150px;
+        font-size: 48px;
+        font-weight: bold;
+      }
+
+      .form {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        margin-top: 40px;
+      }
+
+      .form-title {
+        display: block;
+        text-align: center;
+      }
+
+      .form-input {
+        display: block;
+        align-content: center;
+        width: 80%;
+        padding: 15px;
+        margin: 35px;
+        border-radius: 15px;
+        border: none;
+        box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+      }
+      .form-input:focus {
+        outline-color: #ff616d;
+        cursor: pointer;
+      }
+
+      .form-input:hover {
+        background-color: #fdedec;
+        cursor: pointer;
+      }
+
+      .button {
+        background-color: #ff616d;
+        padding: 15px;
+        width: 200px;
+        height: 60px;
+        border-radius: 10px;
+        font-family: "Comfortaa", cursive;
+        margin-top: 20px;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+        box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+      }
+      .button:hover,
+      .button:focus {
+        transform: translate(0px, 5px);
+        -webkit-transform: translate(0px, 5px);
+        box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.25);
+        outline-color: #ff616d;
+      }
+      .page-footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        text-align: center;
+      }
+      .page-footer a {
+        color: #000000;
+        text-decoration: none;
+        padding-left: 25px;
+      }
+      .page-footer a:hover {
+        text-decoration: underline;
+      }
+      #result {
+        padding-top: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="page-title">Math Birthday! 10^n</h1>
+    </header>
+    <div class="container">
+      <div class="input-group date d-flex justify-content-center">
+        <input
+          type="text"
+          class="form-input rounded-pill"
+          placeholder="Select your birth date"
+          id="birthdate"
+        />
+        <span class="input-group-addon"
+          ><i class="glyphicon glyphicon-th fas fa-calendar-alt"></i
+        ></span>
+      </div>
+      <div class="d-flex justify-content-center">
+        <button class="button btn-danger rounded-pill">Calculate</button>
+      </div>
+      <div id="result"></div>
+    </div>
+    <footer class="page-footer">
+      <a href="https://twitter.com/NaranjoSteffany">Steffany Naranjo</a>
+      <a href="https://www.linkedin.com/in/steffanynaranjov/">LinkedIn</a>
+      <a href="https://github.com/steffanynaranjov">Github</a>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"
+      integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $(".date").datepicker({
+          format: "yyyy/mm/dd",
+          startView: 2,
+          multidate: false,
+          autoclose: true,
+        });
+
+        $(".button").click(function () {
+          const birthdayText = $("#birthdate").val();
+          const myBirthday = getBirthdayFormat(birthdayText);
+          $("#result").append(
+            '<h4 class="resultMessage">' +
+              getMyMathBirthday(myBirthday) +
+              "</h4>"
+          );
+        });
+
+        function getBirthdayFormat(stringDate) {
+          const year = parseInt(stringDate.substring(0, 4));
+          const month = parseInt(stringDate.substring(5, 7)) - 1;
+          const day = parseInt(stringDate.substring(8));
+          const birthdateFormat = new Date(year, month, day);
+
+          return birthdateFormat;
+        }
+
+        function getMyMathBirthday(myBirthday) {
+          $("#result").empty();
+          const oneDay = 24 * 60 * 60 * 1000;
+          const myNextMathBirthday = new Date(new Date().setHours(0, 0, 0));
+
+          const daysPassed = (myBirthday - myNextMathBirthday) / oneDay;
+
+          if (!isNaN(daysPassed)) {
+            if (daysPassed > 0) {
+              return "This is a future date, please search your Birthday";
+            } else {
+              const diffDays = Math.round(Math.abs(daysPassed));
+
+              const digitCounter = diffDays.toString().length;
+              const daysToMyMathBirthday =
+                Math.pow(10, digitCounter) - diffDays;
+              myNextMathBirthday.setDate(
+                myNextMathBirthday.getDate() + daysToMyMathBirthday
+              );
+              return (
+                "Your next Math birthday is the number " +
+                digitCounter +
+                ", and will be on " +
+                +myNextMathBirthday.getFullYear() +
+                "-" +
+                (myNextMathBirthday.getMonth() + 1) +
+                "-" +
+                myNextMathBirthday.getDate() +
+                " it is just " +
+                daysToMyMathBirthday +
+                " days left!"
+              );
+            }
+          } else {
+            return "Ups! You need to add your birthday";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
