@@ -1,3 +1,7 @@
+## You can see the project deploy here
+
+https://steffanynaranjov.github.io/mathBirthday/
+
 # Birthday Challenge
 
 mathbirthdays.com is a site that wants to help people celebrate their special "math birthdays." A
